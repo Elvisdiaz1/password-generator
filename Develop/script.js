@@ -10,12 +10,13 @@ function writePassword() {
 }
 
 function generatePassword() {
-  addUpperCaseLetters();
-  confirm("Do you want to have lowercase letters?");
+  addUpperCaseLetters;
+  addLowerCaseLetters;
+
   confirm("Do you want to have special characters?");
   confirm("How many letters do you want?");
   console.log("apple");
-  return addUpperCaseLetters();
+  return addLowerCaseLetters();
 }
 
 function addUpperCaseLetters() {
@@ -46,10 +47,46 @@ function addUpperCaseLetters() {
     "Y",
     "Z",
   ];
-  confirm("Do you want to have uppercase letters?");
-  if (confirm) {
+  let ask = confirm("Do you want to have uppercase letters?");
+  if (ask) {
     let randomIndex = Math.floor(Math.random() * upperCaseAlpha.length);
     let randomAlpha = upperCaseAlpha[randomIndex];
+    console.log(randomAlpha);
+    return randomAlpha;
+  }
+}
+function addLowerCaseLetters() {
+  let lowerCaseAlpha = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  let ask = confirm("Do you want to have lowercase letters?");
+  if (ask) {
+    let randomIndex = Math.floor(Math.random() * lowerCaseAlpha.length);
+    let randomAlpha = lowerCaseAlpha[randomIndex];
     console.log(randomAlpha);
     return randomAlpha;
   }
