@@ -12,6 +12,7 @@ function writePassword() {
 function generatePassword() {
   confirm("Do you want to have uppercase letters?");
   confirm("Do you want to have lowercase letters?");
+  confirm("Do you want to have special characters?");
   console.log("apple");
   return "apple";
 }
