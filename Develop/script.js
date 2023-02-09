@@ -78,15 +78,41 @@ function passwordSize() {
   }
 }
 
+function passwordCreation() {
+  let askUpper = confirm("Do you want to have uppercase letters?");
+  let askLower = confirm("Do you want to have lowercase letters?");
+  let askSpecial = confirm("Do you want to have special characters?");
+  let askNum = confirm("Do you want to have numbers?");
+
+  if (askUpper) {
+    let randomIndex = Math.floor(Math.random() * upperCaseAlpha.length);
+    let randomAlpha = upperCaseAlpha[randomIndex];
+    return randomAlpha;
+  } else if (askLower) {
+    let randomIndex = Math.floor(Math.random() * lowerCaseAlpha.length);
+    let randomAlpha = lowerCaseAlpha[randomIndex];
+    return randomAlpha;
+  } else if (askSpecial) {
+    let randomIndex = Math.floor(Math.random() * specialChar.length);
+    let randomChar = specialChar[randomIndex];
+    return randomChar;
+  } else if (askNum) {
+    let randomIndex = Math.floor(Math.random() * numbers.length);
+    let randomNum = numbers[randomIndex];
+    return randomNum;
+  }
+}
+
 function generatePassword() {
   passwordSize();
+  passwordCreation;
   // addUpperCaseLetters;
   // addLowerCaseLetters;
   // addSpecialChar;
   // addNumbers;
   // confirm("How many letters do you want?");
   console.log("apple");
-  return addNumbers();
+  return passwordCreation();
 }
 
 function addUpperCaseLetters() {
