@@ -93,7 +93,7 @@ function passwordSize() {
         return result;
       }
       // If Statements that determine which two types are used for random password
-      else if (askUpper && askLower && !askSpecial && !askUpper) {
+      else if (askUpper && askLower && !askSpecial && !askNum) {
         let concatArray = upperCaseAlpha.concat(lowerCaseAlpha);
 
         for (let index = 0; index < ask; index++) {
