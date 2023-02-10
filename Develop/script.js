@@ -1,79 +1,12 @@
 // Global Variables
 // Upper Case Alphabet Array
-let upperCaseAlpha = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-];
+let upperCaseAlpha = ["A", "B","C", "D", "E", "F", "G", "H", "I", "J", "K", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W","X","Y","Z",];
 
 // Lower Case Alphabet Array
-let lowerCaseAlpha = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
+let lowerCaseAlpha = ["a","b","c","d","e","f","g","h","i","j","k","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
 //Special Character Array
-let specialChar = [
-  "!",
-  "@",
-  "#",
-  "$",
-  "%",
-  "^",
-  "&",
-  "*",
-  "?",
-  "/",
-  ";",
-  ":",
-  "-",
-  "_",
-];
+let specialChar = ["!","@","#","$","%","^","&","*","?","/",";",":","-","_",];
 
 // Number Array
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
