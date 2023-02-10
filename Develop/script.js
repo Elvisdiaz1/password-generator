@@ -130,7 +130,7 @@ function passwordSize() {
       }
       let result = newArray.join("");
       return result;
-    } else if (askUpper && askLower) {
+    } else if (askUpper && askLower && !askSpecial && !askUpper) {
       let concatArray = upperCaseAlpha.concat(lowerCaseAlpha);
 
       for (let index = 0; index < ask; index++) {
@@ -140,7 +140,7 @@ function passwordSize() {
       }
       let result = newArray.join("");
       return result;
-    } else if (askUpper && askSpecial) {
+    } else if (askUpper && askSpecial && !askLower && !askNum) {
       let concatArray = upperCaseAlpha.concat(specialChar);
 
       for (let index = 0; index < ask; index++) {
@@ -150,7 +150,7 @@ function passwordSize() {
       }
       let result = newArray.join("");
       return result;
-    } else if (askUpper && askNum) {
+    } else if (askUpper && askNum && !askSpecial && !askLower) {
       let concatArray = upperCaseAlpha.concat(numbers);
 
       for (let index = 0; index < ask; index++) {
@@ -160,7 +160,7 @@ function passwordSize() {
       }
       let result = newArray.join("");
       return result;
-    } else if (askLower && askNum) {
+    } else if (askLower && askNum && !askSpecial && !askUpper) {
       let concatArray = lowerCaseAlpha.concat(numbers);
 
       for (let index = 0; index < ask; index++) {
@@ -170,7 +170,7 @@ function passwordSize() {
       }
       let result = newArray.join("");
       return result;
-    } else if (askLower && askSpecial) {
+    } else if (askLower && askSpecial && !askNum && !askUpper) {
       let concatArray = lowerCaseAlpha.concat(specialChar);
 
       for (let index = 0; index < ask; index++) {
@@ -180,9 +180,58 @@ function passwordSize() {
       }
       let result = newArray.join("");
       return result;
-    } else if (askNum && askSpecial) {
+    } else if (askNum && askSpecial && !askLower && !askUpper) {
       let concatArray = numbers.concat(specialChar);
 
+      for (let index = 0; index < ask; index++) {
+        let randomIndex = Math.floor(Math.random() * concatArray.length);
+        let random = concatArray[randomIndex];
+        newArray.push(random);
+      }
+      let result = newArray.join("");
+      return result;
+    } else if (askUpper && askLower && askNum && !askSpecial) {
+      let concatArray = upperCaseAlpha.concat(lowerCaseAlpha, numbers);
+      for (let index = 0; index < ask; index++) {
+        let randomIndex = Math.floor(Math.random() * concatArray.length);
+        let random = concatArray[randomIndex];
+        newArray.push(random);
+      }
+      let result = newArray.join("");
+      return result;
+    } else if (askUpper && askLower && askSpecial && !askNum) {
+      let concatArray = upperCaseAlpha.concat(lowerCaseAlpha, specialChar);
+      for (let index = 0; index < ask; index++) {
+        let randomIndex = Math.floor(Math.random() * concatArray.length);
+        let random = concatArray[randomIndex];
+        newArray.push(random);
+      }
+      let result = newArray.join("");
+      return result;
+    } else if (askUpper && askNum && askSpecial && !askLower) {
+      let concatArray = upperCaseAlpha.concat(numbers, specialChar);
+      for (let index = 0; index < ask; index++) {
+        let randomIndex = Math.floor(Math.random() * concatArray.length);
+        let random = concatArray[randomIndex];
+        newArray.push(random);
+      }
+      let result = newArray.join("");
+      return result;
+    } else if (askLower && askNum && askSpecial && !askUpper) {
+      let concatArray = lowerCaseAlpha.concat(numbers, specialChar);
+      for (let index = 0; index < ask; index++) {
+        let randomIndex = Math.floor(Math.random() * concatArray.length);
+        let random = concatArray[randomIndex];
+        newArray.push(random);
+      }
+      let result = newArray.join("");
+      return result;
+    } else {
+      let concatArray = lowerCaseAlpha.concat(
+        numbers,
+        specialChar,
+        upperCaseAlpha
+      );
       for (let index = 0; index < ask; index++) {
         let randomIndex = Math.floor(Math.random() * concatArray.length);
         let random = concatArray[randomIndex];
@@ -197,53 +246,8 @@ function passwordSize() {
 }
 
 function generatePassword() {
-  // passwordSize();
-  // passwordCreation;
-  // addUpperCaseLetters;
-  // addLowerCaseLetters;
-  // addSpecialChar;
-  // addNumbers;
-  // confirm("How many letters do you want?");
-  console.log("apple");
   return passwordSize();
 }
-
-// function addUpperCaseLetters() {
-//   let ask = confirm("Do you want to have uppercase letters?");
-//   if (ask) {
-//     let randomIndex = Math.floor(Math.random() * upperCaseAlpha.length);
-//     let randomAlpha = upperCaseAlpha[randomIndex];
-//     console.log(randomAlpha);
-//     return randomAlpha;
-//   }
-// }
-// function addLowerCaseLetters() {
-//   let ask = confirm("Do you want to have lowercase letters?");
-//   if (ask) {
-//     let randomIndex = Math.floor(Math.random() * lowerCaseAlpha.length);
-//     let randomAlpha = lowerCaseAlpha[randomIndex];
-//     console.log(randomAlpha);
-//     return randomAlpha;
-//   }
-// }
-// function addSpecialChar() {
-//   let ask = confirm("Do you want to have special characters?");
-//   if (ask) {
-//     let randomIndex = Math.floor(Math.random() * specialChar.length);
-//     let randomChar = specialChar[randomIndex];
-//     console.log(randomChar);
-//     return randomChar;
-//   }
-// }
-// function addNumbers() {
-//   let ask = confirm("Do you want to have numbers?");
-//   if (ask) {
-//     let randomIndex = Math.floor(Math.random() * numbers.length);
-//     let randomNum = numbers[randomIndex];
-//     console.log(randomNum);
-//     return randomNum;
-//   }
-// }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
