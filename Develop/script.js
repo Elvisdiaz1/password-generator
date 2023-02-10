@@ -126,9 +126,14 @@ function passwordSize() {
       console.log(result);
       return result;
     } else if (askNum) {
-      let randomIndex = Math.floor(Math.random() * numbers.length);
-      let randomNum = numbers[randomIndex];
-      return randomNum;
+      for (let index = 0; index < ask; index++) {
+        let randomIndex = Math.floor(Math.random() * numbers.length);
+        let randomNum = numbers[randomIndex];
+        newArray.push(randomNum);
+      }
+      let result = newArray.join("");
+      console.log(result);
+      return result;
     }
   }
 
