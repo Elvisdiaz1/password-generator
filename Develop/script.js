@@ -55,7 +55,22 @@ let lowerCaseAlpha = [
   "z",
 ];
 
-let specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "?", "/", ";", ":"];
+let specialChar = [
+  "!",
+  "@",
+  "#",
+  "$",
+  "%",
+  "^",
+  "&",
+  "*",
+  "?",
+  "/",
+  ";",
+  ":",
+  "-",
+  "_",
+];
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let newArray = [];
 
@@ -93,13 +108,23 @@ function passwordSize() {
       console.log(result);
       return result;
     } else if (askLower) {
-      let randomIndex = Math.floor(Math.random() * lowerCaseAlpha.length);
-      let randomAlpha = lowerCaseAlpha[randomIndex];
-      return randomAlpha;
+      for (let index = 0; index < ask; index++) {
+        let randomIndex = Math.floor(Math.random() * lowerCaseAlpha.length);
+        let randomAlpha = lowerCaseAlpha[randomIndex];
+        newArray.push(randomAlpha);
+      }
+      let result = newArray.join("");
+      console.log(result);
+      return result;
     } else if (askSpecial) {
-      let randomIndex = Math.floor(Math.random() * specialChar.length);
-      let randomChar = specialChar[randomIndex];
-      return randomChar;
+      for (let index = 0; index < ask; index++) {
+        let randomIndex = Math.floor(Math.random() * specialChar.length);
+        let randomChar = specialChar[randomIndex];
+        newArray.push(randomChar);
+      }
+      let result = newArray.join("");
+      console.log(result);
+      return result;
     } else if (askNum) {
       let randomIndex = Math.floor(Math.random() * numbers.length);
       let randomNum = numbers[randomIndex];
